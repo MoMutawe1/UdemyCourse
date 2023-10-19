@@ -15,7 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public Employee getEmployeeById(String id) throws EmployeeNotFoundException {
-        //return empList.stream().filter((e) -> e.getId().equals(id)).findFirst().orElseThrow(() -> new RuntimeException("Employee with Id: " + id + " is not exist."));
         return empList.stream().filter((e) -> e.getId().equals(id)).findFirst().orElseThrow(() -> new EmployeeNotFoundException("Employee with Id: " + id + " is not exist."));
     }
 
